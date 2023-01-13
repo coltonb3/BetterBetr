@@ -13,8 +13,8 @@ import { persistReducer } from 'redu';
 
 const persistConfig = { key: "root", storage, version: 1};
 const persistReducer = persistReducer(persistConfig, authReducer);
-const store = configStore({
-  reducer: persistedReducer,
+const store = configureStore({
+  reducer: persistReducer,
   middleware: (getDefaultMiddleware) => {
     getDefaultMiddleware({
       serializableCheck: {
