@@ -1,23 +1,30 @@
 import  * as React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
-import Avatar from '@mui/material/Avatar';
-import Stack from '@mui/material/Stack';
-import { deepOrange, deepPurple } from '@mui/material/colors';
-import axios from 'axios';
-import Posts from './components/Posts/posts.js'
+import { BrowserRouter, Navigate, Routes, Route} from 'react-router-dom';
+import HomePage from './components/homePage';
+import LoginPage from './components/loginPage';
+import NavBar from './components/navbar';
+import ProfilePage from './components/profilePage';
+
+
+
 
 
 
 function App() {
 
+  
 
 
   return (
     <div>
-      <Posts/>
-    
+  
+    <BrowserRouter>
+    <Routes>
+      <Route path = '/' element ={<LoginPage/>} />
+      <Route path = '/home' element ={<HomePage/>} />
+      <Route path = '/profile/:userId' element ={<ProfilePage/>} />
+      </Routes>
+    </BrowserRouter>
     </div>
   );
 }
