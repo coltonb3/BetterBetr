@@ -5,13 +5,18 @@ import './App.css';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import { deepOrange, deepPurple } from '@mui/material/colors';
+import axios from 'axios';
+import Posts from './components/Posts/posts.js'
 
 
 
 function App() {
+
+
+
   return (
     <div>
-    <h1>Test</h1>
+      <Posts/>
     
     </div>
   );
