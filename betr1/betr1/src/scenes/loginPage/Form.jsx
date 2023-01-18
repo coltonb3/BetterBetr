@@ -1,12 +1,5 @@
 import { useState } from "react";
-import {
-  Box,
-  Button,
-  TextField,
-  useMediaQuery,
-  Typography,
-  useTheme,
-} from "@mui/material";
+import {Box,Button,TextField,useMediaQuery,Typography,useTheme} from "@mui/material";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import { Formik } from "formik";
 import * as yup from "yup";
@@ -17,13 +10,13 @@ import Dropzone from "react-dropzone";
 import FlexBetween from "../../components/FlexBetween";
 
 const registerSchema = yup.object().shape({
-  firstName: yup.string().required("required"),
-  lastName: yup.string().required("required"),
+  firstName: yup.string().firstName,
+  lastName: yup.string().firstName,
   email: yup.string().email("invalid email").required("required"),
   password: yup.string().required("required"),
-  location: yup.string().required("required"),
-  occupation: yup.string().required("required"),
-  picture: yup.string().required("required"),
+  location: yup.string().location,
+  picture: yup.string().picture,
+  unit: yup.number().unit,
 });
 
 const loginSchema = yup.object().shape({
@@ -37,8 +30,10 @@ const initialValuesRegister = {
   email: "",
   password: "",
   location: "",
-  occupation: "",
-  picture: "",
+  unit: "",
+  picturePath: "",
+  record: '',
+  followers: ''
 };
 
 const initialValuesLogin = {
@@ -56,12 +51,12 @@ const Form = () => {
   const isRegister = pageType === "register";
 
   const register = async (values, onSubmitProps) => {
-    // this allows us to send form info with image
+    //sending FormData
     const formData = new FormData();
     for (let value in values) {
       formData.append(value, values[value]);
     }
-    formData.append("picturePath", values.picture.name);
+    formData.append("picturePath", values.picture);
 
     const savedUserResponse = await fetch(
       "http://localhost:3001/auth/register",
@@ -162,15 +157,15 @@ const Form = () => {
                   sx={{ gridColumn: "span 4" }}
                 />
                 <TextField
-                  label="Occupation"
+                  label="Unit"
                   onBlur={handleBlur}
                   onChange={handleChange}
-                  value={values.occupation}
-                  name="occupation"
+                  value={values.unit}
+                  name="unit"
                   error={
-                    Boolean(touched.occupation) && Boolean(errors.occupation)
+                    Boolean(touched.unit) && Boolean(errors.unit)
                   }
-                  helperText={touched.occupation && errors.occupation}
+                  helperText={touched.unit && errors.unit}
                   sx={{ gridColumn: "span 4" }}
                 />
                 <Box
@@ -232,7 +227,6 @@ const Form = () => {
             />
           </Box>
 
-          {/* BUTTONS */}
           <Box>
             <Button
               fullWidth

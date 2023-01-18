@@ -23,11 +23,12 @@ const NavBar = () => {
   const alt = theme.palette.background.alt;
 
 
-  const fullName = `${user.firstName} ${user.lastName} `;
-
+  const fullName = `${user.firstName} ${user.lastName}`;
+  
 
 
   return (
+  
     <FlexBetween padding ="1rem 6%" backgroundColor = {alt}>
     <FlexBetween gap = "1.75rem">
       <Typography 
@@ -63,7 +64,7 @@ const NavBar = () => {
         <Notifications sx={{ fontSize: "25px" }} />
         <Help sx={{ fontSize: "25px" }} />
         <FormControl variant="standard" value={fullName}>
-          <Select value = { fullName} sx={{ backgroundColor: neutralLight, width: "150px",  borderRadius: "0.25rem", p: "0.25rem 1 rem", "& .MuiSvgIcon-root:" : {
+          <Select value = {fullName} sx={{ backgroundColor: neutralLight, width: "150px",  borderRadius: "0.25rem", p: "0.25rem 1 rem", "& .MuiSvgIcon-root:" : {
             pr: "0.25rem",
             width: "3rem"
           },
