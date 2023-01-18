@@ -26,7 +26,7 @@ const LoginPage = () => {
         backgroundColor={theme.palette.background.alt}
       >
         <Typography fontWeight="500" variant="h5" sx={{ mb: "1.5rem" }}>
-          Welcome to Socipedia, the Social Media for Sociopaths!
+          Betr Bets brings Betr Payouts. Join the community to bet Betr
         </Typography>
         <Form />
       </Box>
