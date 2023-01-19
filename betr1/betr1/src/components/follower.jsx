@@ -55,3 +55,4 @@ const Follower= ({followerId, name, subtitle, userPicturePath }) => {
         </FlexBetween>
     )
 }
+export default Follower; 
