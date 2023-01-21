@@ -2,7 +2,7 @@ import { PersonAddOutlined, PersonRemoveOutlined, StarRateOutlined } from "@mui/
 import { useNavigate } from "react-router-dom";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { setFollowers } from "../../state"
+import { setFollowers } from "../state/index";
 import FlexBetween from "./FlexBetween";
 import UserImage from "./userimage"
 
