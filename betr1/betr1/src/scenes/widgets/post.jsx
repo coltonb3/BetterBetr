@@ -37,7 +37,7 @@ const Post = ({
    
 
     const patchLike = async() => {
-        const response = await fetch(`http://localhost:3001/posts/${postId}/like`, {
+        const response = await fetch(`https://infinite-garden-14391.herokuapp.com/posts/${postId}/like`, {
         method: "PATCH",
         headers: { Authorization: `Bearer ${token}`,
         "Content-Type" : "application/json"
@@ -59,7 +59,7 @@ const Post = ({
             {picturePath && ( 
                 <img 
                 width="100%" height="auto" alt="post" style={{ borderRadius: "0.75rem", marginTop: "0.75rem"}}
-                src={`http://localhost:3001/assets/${picturePath}`}
+                src={`https://infinite-garden-14391.herokuapp.com/assets/${picturePath}`}
                 />
         
             )}

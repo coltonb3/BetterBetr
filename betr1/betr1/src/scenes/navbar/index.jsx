@@ -13,7 +13,7 @@ const NavBar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((state) => state.user)
-  const isNonMobileScreens = useMediaQuery("min-width: 1000px)");
+  const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
 
   const theme = useTheme();
   const neutralLight = theme.palette.neutral.light;
@@ -53,7 +53,7 @@ const NavBar = () => {
       </FlexBetween>
 
       {/* DesktopNav */}
-      {isNonMobileScreens ? (<FlexBetween gap = "2rem">
+      {isNonMobileScreens ? (<FlexBetween gap = "2rem" flex="row">
         <IconButton onClick={() => dispatch(setMode())}>
           {theme.palette.mode === 'dark' ? ( <DarkMode sx={{ fontSize: "25px"}}/> ) : 
         (

@@ -26,11 +26,11 @@ export const authSlice = createSlice({
       if (state.user) {
         state.user.followers = action.payload.followers;
       } else {
-        console.error("no one follows you");
+        console.error("no one follows");
       }
     },
     setPosts: (state, action) => {
-      state.posts = action.payload.posts;
+      state.posts = action.payload.post_id;
     },
     setPost: (state, action) => {
       const updatedPosts = state.posts.map((post) => {
