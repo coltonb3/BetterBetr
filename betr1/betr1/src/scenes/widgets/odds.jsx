@@ -6,7 +6,7 @@ import { useState , useEffect } from "react";
 
 
 
-const GameTicker = () => {
+const Odds = () => {
     const { palette } = useTheme();
     const dark = palette.neutral.dark;
     const main = palette.neutral.main;
@@ -44,20 +44,24 @@ const GameTicker = () => {
     
     return (
         <WidgetWrapper>
-            <FlexBetween flex="column" flexWrap="wrap" alignItems="baseline" justifyContent="flex-start" flexDirection="column"mb="2rem">
+            
+            <FlexBetween flex="column" flexWrap="wrap" alignItems="baseline" justifyContent="flex-start" flexDirection="column" >
                 <Typography color={dark} variant="h5" fontWeight="500">
-                    Todays Games
-                </Typography>
-                <ul>
+                    A look ahead
+                    Filler
+                    <ul>
                     <li>game: 1 </li> 
                     <li>game: 1 </li> 
                     <li>game: 1 </li> 
                     <li>game: 1 </li> 
                     <li>game: 1 </li>
                     </ul>
-                    <Typography>
-                         MM-DD-YYYY 
-                    </Typography>
+                </Typography>
+                <Typography color={dark} variant="h5" fontWeight="500">
+                <button variant='' sx={{color: palette.background.dark}}> 
+                View todays odds
+                </button>
+               </Typography>
             </FlexBetween>
         
         </WidgetWrapper>
@@ -65,4 +69,4 @@ const GameTicker = () => {
     )
 }
 
-export default GameTicker;
+export default Odds;
