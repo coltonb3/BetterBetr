@@ -9,3 +9,6 @@ redux is set up.
 router dom needed to be installed
 setting up themes now **
 **
+
+
+with launch ran into a ton of auth errors that ended up breaking the entire application
