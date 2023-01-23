@@ -31,6 +31,7 @@ const CreatePostWidget = ({picturePath}) => {
             formData.append("picture", image);
             formData.append("picturePath", image.name);
         }
+        
 
         const response = await fetch(`https://infinite-garden-14391.herokuapp.com/posts`, {
             method: "POST",
@@ -60,7 +61,7 @@ const CreatePostWidget = ({picturePath}) => {
                     acceptedFiles=".jpg,.jpeg,.png"
                     multiple={false}
                     onDrop={(acceptedFiles) =>
-                      setImage("picture", acceptedFiles[0])
+                      setImage(acceptedFiles[0])
                     }
                   >
                     {({ getRootProps, getInputProps }) => (
