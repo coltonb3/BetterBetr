@@ -9,6 +9,7 @@ import WidgetWrapper from "../../components/WidgetWrapper";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "../../state";
+import state from "../../state";
 
 const CreatePostWidget = ({picturePath}) => {
     const dispatch = useDispatch();
